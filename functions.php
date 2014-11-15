@@ -71,12 +71,15 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 	- adding custom login css
 	- changing text in footer of admin
 */
-// require_once( 'library/admin.php' ); // this comes turned off by default
+require_once( 'library/admin.php' ); // this comes turned off by default
 /*
 4. library/translation/translation.php
 	- adding support for other languages
 */
 // require_once( 'library/translation/translation.php' ); // this comes turned off by default
+
+// add addition helpful functions
+require_once( 'library/brew-tap.php' );
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
