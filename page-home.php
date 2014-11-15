@@ -6,14 +6,17 @@ Template Name: Home Page Template
 
 <?php get_header(); ?>
 
+<?php if ( has_post_thumbnail() ) { ?>
+<div class="homebanner" style="background-image: url('<?php $params = array( 'width' => 1200, 'opacity' => 100, 'grayscale' => false, 'colorize' => '#ff0000' ); echo bfi_img( 'full', $params ); ?>');">
+<?php } else { ?>
 <div class="homebanner">
+<?php } ?>
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h1>BREW for Wordpress</h1>
-        <p>A free and open-source starter theme based on Bones and Bootstrap 3</p>
-        <p><a href="http://www.github.com/slightlyoffbeat/brew" target="_blank" class="btn btn-default btn-lg">Github</a>
-          <a href="http://danvswild.com" target="_blank" class="btn btn-lg btn-primary">Author</a></p>
+      <div class="animated zoomInDown col-md-8 col-md-offset-2">
+        <h1>It's a Bird, it's a Plane!</h1>
+        <p>It's a place to start!</p>
+        <a href="http://jamesgentry.us" target="_blank" class="btn btn-lg btn-primary">Gentry</a></p>
       </div>
     </div><!-- end .row-->
   </div> <!-- end .container-->
@@ -21,28 +24,28 @@ Template Name: Home Page Template
 
 <div class="container">
   <div class="row text-center">
-    
+
     <!--Section 1-->
     <div class="col-sm-4 about">
-      <i class="fa fa-laptop fa-4x light-gray"></i>
-      <h3>Built with Bootstrap</h3>
-      <p>Enjoy Wordpress with all of the benefits of Bootstrap.  Quickly build themes while utilizing one of the most powerful frameworks available on the web.</p>
+      <i class="fa fa-rocket fa-4x light-gray"></i>
+      <h3>One Box</h3>
+      <p>Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. I care. So, what do you think of her, Han? Oh God, my uncle. How am I ever gonna explain this? Still, she's got a lot of spirit. I don't know, what do you think? Red Five standing by. In my experience, there is no such thing as luck.</p>
     </div>
-    
+
     <!--Section 2-->
     <div class="col-sm-4 about">
-      <i class="fa fa-github-square fa-4x light-gray"></i>
-      <h3>Free and Open-Source</h3>
-      <p>BREW pulls together some of the best open source projects in to one awesome starter theme.  Feel free to fork, edit and contribute.</p>
+      <i class="fa fa-space-shuttle fa-4x light-gray"></i>
+      <h3>Two Box</h3>
+      <p>The more you tighten your grip, Tarkin, the more star systems will slip through your fingers. Still, she's got a lot of spirit. I don't know, what do you think? Leave that to me. Send a distress signal, and inform the Senate that all on board were killed. Still, she's got a lot of spirit. I don't know, what do you think?</p>
     </div>
-    
+
     <!--Section 3-->
     <div class="col-sm-4 about">
-      <i class="fa fa-flag fa-4x light-gray"></i>
-      <h3>Over 350 Icons</h3>
-      <p>Font Awesome 4 support is already baked in.  Quickly and easily place icons in menus, buttons, headers, lists and more.</p>
+      <i class="fa fa-paper-plane fa-4x light-gray"></i>
+      <h3>Three Box</h3>
+      <p>Don't act so surprised, Your Highness. You weren't on any mercy mission this time. Several transmissions were beamed to this ship by Rebel spies. I want to know what happened to the plans they sent you. No! Alderaan is peaceful. We have no weapons. You can't possibly&hellip; I'm surprised you had the courage to take the responsibility yourself. In my experience, there is no such thing as luck. Don't underestimate the Force.</p>
     </div>
-    
+
   </div>
 </div>
 
