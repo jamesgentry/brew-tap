@@ -132,6 +132,12 @@ function bones_scripts_and_styles() {
     // modernizr (without media query polyfill)
     wp_register_script( 'bones-modernizr', get_template_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
+    // register fontawesome
+    wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), '', 'all' );
+
+    // register animate.css stylesheet
+    wp_register_style( 'animate', get_template_directory_uri() . '/library/css/animate.css', array(), '', 'all' );
+
     // register main stylesheet
     wp_register_style( 'bones-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
@@ -154,6 +160,8 @@ function bones_scripts_and_styles() {
 
     // enqueue styles and scripts
     wp_enqueue_script( 'bones-modernizr' );
+    wp_enqueue_style( 'fontawesome' );
+    wp_enqueue_style( 'animate' );
     wp_enqueue_style( 'bones-stylesheet' );
     wp_enqueue_style( 'bones-ie-only' );
 
@@ -281,7 +289,7 @@ function bones_related_posts() {
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
-		foreach( $tags as $tag ) { 
+		foreach( $tags as $tag ) {
 			$tag_arr .= $tag->slug . ',';
 		}
         $args = array(
@@ -312,9 +320,9 @@ function bones_page_navi() {
 	$bignum = 999999999;
 	if ( $wp_query->max_num_pages <= 1 )
 	return;
-	
+
 	echo '<nav class="pagination">';
-	
+
 		echo paginate_links( array(
 			'base' 			=> str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
 			'format' 		=> '',
@@ -326,7 +334,7 @@ function bones_page_navi() {
 			'end_size'		=> 3,
 			'mid_size'		=> 3
 		) );
-	
+
 	echo '</nav>';
 } /* end page navi */
 
