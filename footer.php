@@ -40,7 +40,7 @@
               &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
             </div>
             <div class="col-md-4 col-md-offset-4 attribution">
-              <a href="http://www.danvswild.com/brew" target="_blank">BREW</a> theme by <a target="_blank" href="http://www.danvswild.com">Dan vs Wild</a>
+              <i class="fa fa-wrench"></i> <a href="http://jamesgentry.us" target="_blank">James Gentry</a>
             </div>
           </div> <!-- end .row -->
         </div>
