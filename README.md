@@ -1,24 +1,5 @@
 # Brew 0.9
-__A Wordpress starter theme based on Bones and Bootstrap 3__
-
-Created by **Dan Brown**: http://danvswild.com
-
-[Demo](http://danvswild.com/brew)
-
-![Home Screen](/screenshots/screen1.png)
-
-
-I searched, but I couldn't find a Wordpress starter theme that was based on Bootstrap 3 that I liked.  BREW is just pulling together excellent projects such as bootstrap, wordpress, bones, etc into a simple starter theme.  This is very lightweight with only some very mild CSS changes to make everything look nice out of the box.  My goal is to provide a solid foundation for anyone wanting to develop a wordpress theme with bootstrap.
-
-header screnshot:
-
-![Home Screen](/screenshots/screen2.png)
-
-***
-
-footer screenshot:
-
-![Home Screen](/screenshots/screen3.png)
+__A Wordpress starter theme for my projects built on Bones, Brew, and Bootstrap 3__
 
 Features:
 * LESS
@@ -28,21 +9,12 @@ Features:
 * Very clean out-of-the-box experience
 * pagination
 * breadcrumbs
-* Font Awesome
+* Font Awesome 4.2 from CDN
 * Redux Options Framework
 * Easy to add metaboxes
-
-Updates since v.6:
-* Updated to Bootstrap 3.1
-* Added FitVid to make video embeds responsive
-* Removed SASS for now (need to figure out how to keep it up to date)
-* added author profile box
-* updated default styles
-* organized LESS files
-* Added recommended CSS from wordpress for image alignment, text alignment, etc
-* Updated FontAwesome to v.4
-* Various Bug Fixes
-* Bunch of other stuff I can't remember
+* Animate.css
+* Plugin recommendation
+* BFI Thumb
 
 
 To use:
@@ -51,15 +23,8 @@ To use:
 3. add customize and add new LESS files in /less/brew
 
 
-To do before v1.0:
-* Combine JS files
-* Look in to combining functions.php/brew.php/bones.php
-* Finalize all included pages/php files.  Not all have been updated.
-* Set up Grunt
-
-
-
-Providing credit where credit is due:
+Credits:
+* [Brew - Dan Brown](http://danvswild.com/brew)
 * [Bootstrap 3](https://github.com/twbs/bootstrap)
 * [Bones](https://github.com/eddiemachado/bones)
 * [Bootstrap Nav Walker](https://github.com/twittem/wp-bootstrap-navwalker) (bootstrap navigation)
