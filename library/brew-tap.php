@@ -2,7 +2,7 @@
 
 /*
 Author: James Gentry
-URL: jamesgentry.us
+URL: http://jamesgentry.us
 
 Recommended plugins and extra functions to use.
 */

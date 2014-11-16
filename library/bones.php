@@ -7,6 +7,11 @@ in the functions.php file.
 
 Developed by: Eddie Machado
 URL: http://themble.com/bones/
+
+Edited by: James Gentry
+URL: http://jamesgentry.us
+Added fontawesome CDN
+Animate.css
 */
 
 /*********************
