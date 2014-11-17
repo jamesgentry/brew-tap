@@ -5,20 +5,18 @@ Author: James Gentry
 URL: http://jamesgentry.us
 
 Recommended plugins and extra functions to use.
+Cloaking email addresses
+BFI Thumb functions
+Change welcome text in Admin Menu from Howdy to Welcome
 */
 
-/**
- * First up, recommended plugins for theme
- * Include the TGM_Plugin_Activation class.
- */
+// First up, recommended plugins for theme
+// Include the TGM_Plugin_Activation class.
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
- *
- * In this example, we register two plugins - one included with the TGMPA library
- * and one from the .org repo.
  *
  * The variable passed to tgmpa_register_plugins() should be an array of plugin
  * arrays.
@@ -120,43 +118,46 @@ function my_theme_register_required_plugins() {
 
 }
 
-/* Use BFI thumb resizer
+/** Use BFI thumb resizer
 // Usage: echo "<img src='" . bfi_thumb( "URL-to-image.jpg", $params ) . "'/>";
-// Resize by width only
+
+RESIZE BY WIDTH ONLY
 $params = array( 'width' => 400 );
 bfi_thumb( "URL-to-image.jpg", $params );
 
-// Resize by width and height
+RESIZE BY WIDTH AND HEIGHT
 $params = array( 'width' => 400, 'height' => 300 );
 bfi_thumb( "URL-to-image.jpg", $params );
 
-// Crop
+CROP
 $params = array( 'width' => 400, 'height' => 300, 'crop' => true );
 bfi_thumb( "URL-to-image.jpg", $params );
 
-// Change opacity (makes your image into a PNG)
-$params = array( 'opacity' => 80 ); // 80% opaque
+CHANGE OPACITY (CHANGES IMAGE INTO A PNG)
+$params = array( 'opacity' => 80 );
 bfi_thumb( "URL-to-image.jpg", $params );
 
-// Grayscale
+GRAYSCALE
 $params = array( 'grayscale' => true );
 bfi_thumb( "URL-to-image.jpg", $params );
 
-// Colorize
+COLORIZE
 $params = array( 'color' => '#ff0000' );
 bfi_thumb( "URL-to-image.jpg", $params );
 
-// Negate
+NEGATE
 $params = array( 'negate' => true );
 bfi_thumb( "URL-to-image.jpg", $params );
 
-// Multiple parameters
+MULTIPLE PARAMETERS
 $params = array( 'width' => 400, 'height' => 300, 'opacity' => 50, 'grayscale' => true, 'colorize' => '#ff0000' );
 bfi_thumb( "URL-to-image.jpg", $params );
 */
+
 require_once('BFI_Thumb.php');
-// Change the upload subdirectory to wp-content/uploads/other_dir
-//@define( BFITHUMB_UPLOAD_DIR, 'other_dir' );
+// To change the upload subdirectory to wp-content/uploads/other_dir
+// uncomment the line below and edit the directory
+// @define( BFITHUMB_UPLOAD_DIR, 'other_dir' );
 
 function bfi_img( $thumb_size, $params ) {
   global $post;
@@ -166,12 +167,12 @@ function bfi_img( $thumb_size, $params ) {
   return $custom_img_src;
 }
 /* so we can use it like this:
-// <img src="<?php echo bfi_img('full', 300, 400);?>" />
+// <img src="<?php echo bfi_img('full', $params);?>" />
 // <div style="background: transparent url('<?php echo bfi_img('full', $params ); ?>') no-repeat top center;"></div>
 */
 
-/* cloaking email addresses */
-// Usage: [antibot email="name@email.com"]
+// Cloaking email addresses
+// Shortcode usage: [antibot email="name@email.com"]
 function antibot_sc( $atts ) {
   extract( shortcode_atts( array(
     'email' => ''
@@ -180,23 +181,26 @@ function antibot_sc( $atts ) {
 }
 add_shortcode( 'antibot', 'antibot_sc' );
 
-// don't fixed Wordpress to WordPress in content
+// Don't fixed Wordpress to WordPress in content
 remove_filter( 'the_title', 'capital_P_dangit', 11 );
 remove_filter( 'the_content', 'capital_P_dangit', 11 );
 remove_filter( 'comment_text', 'capital_P_dangit', 31 );
 
-// remove some menu items, just being neat
-//function remove_admin_menus(){
-  //if ( function_exists('remove_menu_page') ) {
-      //remove_menu_page('edit-comments.php');
-      //remove_menu_page( 'themes.php' );
-      //remove_menu_page( 'plugins.php' );
-      //remove_menu_page( 'tools.php' );
-  //}
-//}
+/** Remove some menu items, just to be neat or make it harder to reach
+  * Pages are still accessible this way, but you need to know the url
+  * Just uncomment the add_action function below to use it.
+  */
+function remove_admin_menus(){
+  if ( function_exists('remove_menu_page') ) {
+      remove_menu_page('edit-comments.php');
+      remove_menu_page( 'themes.php' );
+      remove_menu_page( 'plugins.php' );
+      remove_menu_page( 'tools.php' );
+  }
+}
 //add_action('admin_menu', 'remove_admin_menus');
 
-/*************** REPLACE HOWDY *************/
+// Replace Howdy admin bar message
 function change_howdy($translated, $text, $domain) {
     if (false !== strpos($translated, 'Howdy'))
         return str_replace('Howdy', 'Welcome', $translated);

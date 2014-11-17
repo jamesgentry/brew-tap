@@ -361,7 +361,6 @@ return '...</p><p><a class="excerpt-read-more btn btn-primary" href="'. get_perm
 
 /*
  * This is a modified the_author_posts_link() which just returns the link.
- *
  * This is necessary to allow usage of the usual l10n process with printf().
  */
 function bones_get_the_author_posts_link() {
