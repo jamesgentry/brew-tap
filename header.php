@@ -29,14 +29,12 @@
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
-
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -63,8 +61,8 @@
 
             </div>
           </div>
-        </div> 
-        
+        </div>
+
       </nav>
 
 		</header> <?php // end header ?>
