@@ -69,11 +69,11 @@ function my_theme_register_required_plugins() {
             'slug'      => 'bootstrap-for-contact-form-7',
             'required'  => false,
         ),
-        array(
-            'name'      => 'Developer',
-            'slug'      => 'developer',
-            'required'  => false,
-        ),
+        // array(
+        //     'name'      => 'Developer',
+        //     'slug'      => 'developer',
+        //     'required'  => false,
+        // ),
 
     );
 
@@ -208,6 +208,21 @@ function change_howdy($translated, $text, $domain) {
 }
 
 add_filter('gettext', 'change_howdy', 10, 3);
+
+// Add featured image col to admin for easy viewing
+add_filter('manage_posts_columns', 'posts_columns', 5);
+add_action('manage_posts_custom_column', 'posts_custom_columns', 5, 2);
+
+function posts_columns($defaults){
+    $defaults['riv_post_thumbs'] = __('Thumbs');
+    return $defaults;
+}
+
+function posts_custom_columns($column_name, $id){
+    if($column_name === 'riv_post_thumbs'){
+      echo the_post_thumbnail(array(50,50));
+    }
+}
 
 // end
 ?>
